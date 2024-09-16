@@ -1,0 +1,24 @@
+$purple-dark:#6f42c1;
+$purple:#6f42c1;
+$pink:#6f42c1;
+$blue-dark: #4285f4;
+$blue-light: #00a1f1;
+$footer: #151414;
+$white: #fff;
+
+$lightblue:#5BA8A0;
+$darkblue: #3b5284;
+$radium: #CBE54E;
+$greendark: #5D6E1E;
+$greenlight: #94B447;
+
+$primary: $blue-dark;
+$secondary: $blue-light;
+
+$accordion-icon-width:                    1.5rem;
+$accordion-icon-color:                    $primary;
+$accordion-icon-active-color:             $primary;
+
+
+// Import Bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";

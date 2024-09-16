@@ -1,7 +1,11 @@
-// Import Bootstrap
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// Custom styles
+@use 'custom';
 
-// Add your custom styles below
-body {
-    font-family: Arial, sans-serif;
-}
+// Import Components
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/fonts';
+@use 'components/mixins';
+
+// IMPORT Sections
+@use 'sections/navbar';
