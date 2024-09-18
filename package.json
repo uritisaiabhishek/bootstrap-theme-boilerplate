@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
-    "deploy": "gulp deploy"  // Added deploy script to publish via gh-pages
+    "deploy": "gulp deploy" 
   },
   "keywords": [],
   "author": "",
@@ -22,7 +22,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
-    "gh-pages": "^5.0.0"  // Added gh-pages to deploy build folder
+    "gh-pages": "^5.0.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
