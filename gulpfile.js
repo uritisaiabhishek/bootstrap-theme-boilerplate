@@ -8,6 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');
+const ghPages = require('gh-pages');  // Import gh-pages
 
 // Paths
 const paths = {
@@ -16,7 +17,7 @@ const paths = {
     html: './src/**/*.html',
     images: './src/assets/images/**/*',
     includes: './includes/**/*.html',  // Include header.html
-    dist: './build/',
+    dist: './build/',  // Output to the build folder
 };
 
 // Compile SCSS to CSS
@@ -72,15 +73,24 @@ function serve() {
     gulp.watch(paths.includes, html).on('change', browserSync.reload);  // Watch for changes in includes
 }
 
+// Deploy to GitHub Pages
+function deploy(cb) {
+    ghPages.publish(paths.dist, cb);  // Push build folder to gh-pages branch
+}
+
 // Define tasks
 exports.styles = styles;
 exports.scripts = scripts;
 exports.html = html;
 exports.images = images;
 exports.serve = serve;
+exports.deploy = deploy;  // Export deploy task
 
 // Default task
 exports.default = gulp.series(gulp.parallel(styles, scripts, html, images), serve);
 
 // Build task
 exports.build = gulp.series(gulp.parallel(styles, scripts, html, images));
+
+// Deploy task
+exports.deploy = gulp.series(exports.build, deploy);  // Build and deploy to GitHub Pages
